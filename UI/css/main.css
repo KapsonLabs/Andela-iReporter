@@ -294,3 +294,43 @@ footer{
     float: left;
     width: 90%;
 }
+
+/*CREATE CSS*/
+
+#create .create-box{
+    float: left;
+    width: 30%;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#create .create-box img{
+    height: 250px;
+    width: 250px;
+    margin-top: 20px;
+}
+
+#create .create-box input{
+    padding: 10px;
+    height: 25px;
+    width: 300px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#create .create-button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px 100px;
+}
+
+#create a{
+    padding: 20px;
+    border: 1px solid black;
+    text-decoration: none;
+    float: right;
+}
+
