@@ -1,0 +1,336 @@
+@import 'buttons.css';
+@import 'tables.css';
+
+body{
+    font: 15px/1.5 Arial, Helvetica, sans-serif;
+    padding:0;
+    margin:0;
+    background: #f4f4f4;
+    /* min-height: 100%; */
+}
+
+/* Global */
+.container{
+    width:80%;
+    margin: auto;
+    overflow: hidden
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+/*Header*/
+header{
+    background: #2e546b;
+    color: #ffffff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #1db9e8 3px solid;
+}
+
+header a{
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header li{
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+header #brand{
+    float: left;
+}
+
+header #branding h1{
+    margin:0;
+}
+
+header nav{
+    float:right;
+    margin-top: 10px;
+}
+
+header .highlight, header .current a{
+    color: #cca9e4;
+    font-weight: bold;
+}
+
+header a:hover{
+    color: #cccccc;
+    font-weight: bold;
+}
+
+/*Landing*/
+
+#landing{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+#landing .flex-container-3 .col{
+    float:left;
+    width: 30%;
+    padding: 10px;
+    text-align: center;
+}
+
+#landing .flex-container-3 .col img{
+    width: 300px;
+    height: 300px;
+    margin-top: 50px;
+}
+
+#landing form{
+    float:right;
+    margin-top: 20px;
+}
+
+#landing input{
+    padding: 8px;
+    height: 25px;
+    width: 250px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#landing h6{
+    font-size: 15px;
+}
+
+/*Parallax*/
+#parallax{
+    padding: 15px;
+    color: #ffffff;
+    text-align: center;
+    background: #4583df;
+}
+
+/*Touring*/
+
+#touring{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#touring .small-box{
+    float:left;
+    text-align: center;
+    width: 30%;
+    padding: 10px;
+}
+
+#touring .small-box img{
+    width: 100px;
+    height: 100px;
+}
+
+footer{
+    padding: 20px;
+    margin-top: 20px;
+    color: #ffffff;
+    background-color: #2e546b;
+    text-align: center;
+    /* bottom: 0; */
+    /* position: absolute; */
+    overflow: hidden;
+    width: 100%;
+    /* bottom: 0; */
+}
+
+/*Login*/
+#login{
+    margin-top: 70px;
+    margin-bottom: 130px;
+}
+
+#login .container .col{
+    float:left;
+    width: 40%;
+    padding: 10px;
+    text-align: center;
+}
+
+#login form{
+    float:left;
+    margin-top: 30px;
+}
+
+#login .col img{
+    width: 300px;
+    height: 300px;
+    margin-top: 50px;   
+}
+
+#login input{
+    padding: 10px;
+    height: 25px;
+    width: 300px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#login a{
+    padding: 0 25px 0 25px;
+    text-decoration: none;
+}
+
+/*FEED CSS*/
+#feed img{
+    width: 30px;
+    height: 30px;
+    padding: 15px;
+}
+
+#feed .feed-container{
+    border: 1px solid black;
+    overflow: hidden;
+    padding: 10px 40px;
+    position: relative;
+    margin-top: 15px;
+}
+
+#feed .large-feed-box{
+    width: 60%;
+    float: left;
+}
+
+#feed .small-feed-box{
+    width: 30%;
+    float: right;
+}
+
+#feed .feed-container a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid cornflowerblue;
+    margin-right: 10px;
+    color: white;
+    background: lightsteelblue;
+}
+
+#feed .small-feed-box p{
+    float: right;
+    text-align: center; 
+}
+
+#feed .small-feed-box img{
+    float: right;
+}
+
+#feed .feed-head a{
+    float: right;
+    margin-top: 5px;
+    display: contents;
+}
+
+#feed .feed-head h2{
+    float: left;
+    margin-top: 10px;
+    /* position: relative; */
+    display: contents;
+}
+
+/*PROFILE PAGE*/
+
+#profile .redflag-detail{
+    float: right;
+    width: 60%;
+    /* border: 1px solid black; */
+    margin-top: 11px;
+}
+
+#profile .profile-detail{
+    float: left;
+    width: 39%;
+    border: 1px solid black;
+    margin-top: 20px;
+    /* padding: 0px 0px; */
+    text-align: center;
+}
+
+#profile .profile-detail img{
+    width: 200px;
+    height: 200px;
+}
+
+#profile .redflag-detail .flag-box{
+    width: 25%;
+    float: left;
+    border: 1px solid grey;
+    padding: 10px;
+    margin: 10px;
+}
+
+#timeline .timeline-records{
+    border: 1px solid grey;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+#timeline .record-box{
+    border: 1px solid grey;
+    margin: 10px 10px;
+    padding: 20px 20px;
+    display: flex;
+    /* flex-grow: 1; */
+}
+
+#timeline .timeline-records .record-box img{
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-right: 20px; 
+}
+
+#timeline .timeline-records .record-box p{
+    float: left;
+    width: 90%;
+}
+
+/*CREATE CSS*/
+
+#create .create-box{
+    float: left;
+    width: 30%;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#create .create-box img{
+    height: 250px;
+    width: 250px;
+    margin-top: 20px;
+}
+
+#create .create-box input{
+    padding: 10px;
+    height: 25px;
+    width: 300px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#create .create-button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px 100px;
+}
+
+#create a{
+    padding: 20px;
+    border: 1px solid black;
+    text-decoration: none;
+    float: right;
+}
+
