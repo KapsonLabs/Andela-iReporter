@@ -30,3 +30,6 @@ B) Admin
 - CSS
 - JS
 - Python
+
+## UI TEMPLATE LINK ##
+The UI Templates can be found on this link (https://kapsonlabs.github.io/Andela-iReporter/UI/index.html "iReporter's Homepage")
