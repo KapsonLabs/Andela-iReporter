@@ -32,4 +32,4 @@ B) Admin
 - Python
 
 ## UI TEMPLATE LINK ##
-The UI Templates can be found on this link (https://kapsonlabs.github.io/Andela-iReporter/UI/index.html "iReporter's Homepage")
+The UI Templates can be found on this link [iReporter Homepage](https://kapsonlabs.github.io/Andela-iReporter/UI/index.html)
