@@ -224,3 +224,16 @@ footer{
 #feed .small-feed-box img{
     float: right;
 }
+
+#feed .feed-head a{
+    float: right;
+    margin-top: 5px;
+    display: contents;
+}
+
+#feed .feed-head h2{
+    float: left;
+    margin-top: 10px;
+    /* position: relative; */
+    display: contents;
+}
