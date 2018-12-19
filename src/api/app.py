@@ -23,7 +23,7 @@ def get_all_incidents():
 
     if len(incidents) < 1:
         return jsonify({"status":200, "message": "There are no products"})
-    return jsonify({"status":200, "incidents": redflags})
+    return jsonify({"status":200, "data": redflags})
 
 
 @app.route('/api/v1/red-flags', methods=['POST'])
