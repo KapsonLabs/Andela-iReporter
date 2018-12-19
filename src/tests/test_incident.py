@@ -9,7 +9,7 @@ import json
 from src.app import app
 
 
-class TestProducts(unittest.TestCase):
+class TestIncidents(unittest.TestCase):
 
 	def setUp(self):
 		self.app_tester = app.test_client()
