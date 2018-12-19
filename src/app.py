@@ -4,8 +4,9 @@ Date: 19th December 2018
 Flask API for iReporter Developer challenge
 """
 
+
 from flask import Flask, jsonify, request, Response, json
-from models import User, Incident
+from src.models import User, Incident
 
 app = Flask(__name__)
 

@@ -6,7 +6,7 @@ Test file for the api routes
 
 import unittest
 import json
-from api.app import app
+from src.app import app
 
 
 class TestProducts(unittest.TestCase):
