@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/KapsonLabs/Andela-iReporter.svg?branch=ft-endpoint-create-red-flag)](https://travis-ci.org/KapsonLabs/Andela-iReporter)
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/5ecd878a2235b47e603a/maintainability)](https://codeclimate.com/github/KapsonLabs/Andela-iReporter/maintainability)
+[![Build Status](https://travis-ci.org/KapsonLabs/Andela-iReporter.svg?branch=ft-endpoint-create-red-flag)](https://travis-ci.org/KapsonLabs/Andela-iReporter) [![Maintainability](https://api.codeclimate.com/v1/badges/5ecd878a2235b47e603a/maintainability)](https://codeclimate.com/github/KapsonLabs/Andela-iReporter/maintainability)
 
 # iREPORTER PROJECT #
 
