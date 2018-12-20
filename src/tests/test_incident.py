@@ -36,7 +36,7 @@ class TestIncidents(unittest.TestCase):
 		response = self.app_tester.get('/api/v1/red-flags')
 		data = json.loads(response.data)
 		self.assertEqual(data['status'], 200)
-		self.assertEqual(len(data['data']), 2)
+		self.assertEqual(len(data['data']), 4)
 		self.assertEqual(data['data'][0]['createdBy'], 'Allan2')
 
 

@@ -42,9 +42,20 @@ def add_incident():
 
 
 #GET an incident
-@app.route('/api/v1/red-flags', methods=['GET'])
+@app.route('/api/v1/red-flags/<int:id>', methods=['GET'])
 def get_unique_incident(id):
-    pass
+    try:
+        redflagss=[]
+        print(redflagss)
+        for incident in incidents:
+            redflagss.append(incident.convert_data())
+        for redflag in redflagss:
+            if redflag['id'] == id:
+                return jsonify({"status":200, "data": redflag})
+            else:
+                return jsonify({"status":404, "message":"The resource doesnt exist"})
+    except AttributeError:
+        return jsonify({"status":404, "message":"The data structure is empty, Please Post first"})
 
 
 #UPDATE an incident
@@ -54,7 +65,18 @@ def update_incident_record(id):
 
 
 #DELETE an incident
-@app.route('/api/v1/red-flags', methods=['DELETE'])
-def delete_incident_record(id):
-    pass
+# @app.route('/api/v1/red-flags/<int:id>', methods=['DELETE'])
+# def delete_incident_record(id):
+#     try:
+#         redflagss=[]
+#         print(redflagss)
+#         for incident in incidents:
+#             redflagss.append(incident.convert_data())
+#         for redflag in redflagss:
+#             if redflag['id'] == id:
+#                 return jsonify({"status":200, "data": redflag})
+#             else:
+#                 return jsonify({"status":404, "message":"The resource doesnt exist"})
+#     except AttributeError:
+#         return jsonify({"status":404, "message":"The data structure is empty, Please Post first"})
 
