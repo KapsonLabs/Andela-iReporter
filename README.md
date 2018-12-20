@@ -31,5 +31,10 @@ B) Admin
 - JS
 - Python
 
-## UI TEMPLATE LINK ##
-The UI Templates can be found on this link [iReporter Homepage](https://kapsonlabs.github.io/Andela-iReporter/UI/index.html)
+### API Endpoints
+
+HTTP Method|Endpoint|Functionality
+-----------|--------|-------------
+POST|api/v1/red-flags|Create an incident
+GET|api/v1/red-flags/questionId|Fetch a specific incident
+GET|api/v1/red-flags|Fetch all incidents
