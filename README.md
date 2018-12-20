@@ -38,5 +38,5 @@ B) Admin
 HTTP Method|Endpoint|Functionality
 -----------|--------|-------------
 POST|api/v1/red-flags|Create an incident
-GET|api/v1/red-flags/questionId|Fetch a specific incident
+GET|api/v1/red-flags/id|Fetch a specific incident
 GET|api/v1/red-flags|Fetch all incidents
