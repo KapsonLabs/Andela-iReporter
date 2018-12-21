@@ -4,10 +4,12 @@ Date: 19th December 2018
 Flask API for iReporter Developer challenge
 """
 
+import requests
 from flask import Flask, jsonify, request, Response, json
 from src.models import User, Incident
 
 app = Flask(__name__)
+app.config['JSON_SORT_KEYS'] = False
 
 incidents=[]
 
@@ -38,7 +40,7 @@ def add_incident():
     except ValueError as e:
         print(e)
         return jsonify({"status":400, "message": "Price should be integer"})
-    return jsonify({"status":201, "data": [incident.convert_data()]})
+    return jsonify({"status":201, "data": [{"id":incident.id, "message":"Created Red flag Record"}]})
 
 
 #GET an incident
@@ -50,33 +52,31 @@ def get_unique_incident(id):
         for incident in incidents:
             redflagss.append(incident.convert_data())
         for redflag in redflagss:
-            if redflag['id'] == id:
-                return jsonify({"status":200, "data": redflag})
-            else:
+            try:
+                if redflag['id'] == id:
+                    return jsonify({"status":200, "data": redflag})
+            except TypeError:
                 return jsonify({"status":404, "message":"The resource doesnt exist"})
     except AttributeError:
         return jsonify({"status":404, "message":"The data structure is empty, Please Post first"})
 
 
 #UPDATE an incident
-@app.route('/api/v1/red-flags', methods=['PATCH'])
+@app.route('/api/v1/red-flags/<int:id>/<location>', methods=['PATCH'])
 def update_incident_record(id):
     pass
 
 
 #DELETE an incident
-# @app.route('/api/v1/red-flags/<int:id>', methods=['DELETE'])
-# def delete_incident_record(id):
-#     try:
-#         redflagss=[]
-#         print(redflagss)
-#         for incident in incidents:
-#             redflagss.append(incident.convert_data())
-#         for redflag in redflagss:
-#             if redflag['id'] == id:
-#                 return jsonify({"status":200, "data": redflag})
-#             else:
-#                 return jsonify({"status":404, "message":"The resource doesnt exist"})
-#     except AttributeError:
-#         return jsonify({"status":404, "message":"The data structure is empty, Please Post first"})
+@app.route('/api/v1/red-flags/<int:id>', methods=['DELETE'])
+def delete_incident_record(id):
+    try:
+        for incident in incidents:
+            if incident.id == id:
+                incidents.remove(incident)
+            else:
+                break
+    except:
+        return jsonify({"status":404 , "message":"The resource doenot exist"})
+    return jsonify({"status":200, "data": [{"id":incident.id, "message":"Red-flag record deleted successfully"}]})   
 
