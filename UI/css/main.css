@@ -99,6 +99,12 @@ header a:hover{
     margin-bottom: 5px;
 }
 
+#landing a{
+    margin-top: 15px;
+    float: left;
+    margin-left: 20px;
+}
+
 #landing h6{
     font-size: 15px;
 }
@@ -178,15 +184,27 @@ footer{
 }
 
 #login a{
-    padding: 0 25px 0 25px;
+    /* padding: 0 25px 0 25px; */
     text-decoration: none;
+    float: left;
+    margin-top: 15px;
 }
 
 /*FEED CSS*/
-#feed img{
-    width: 30px;
+#feed .feed-container img{
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+    /* margin-top: 100px; */
+}
+
+#feed .feed-head{
+    margin-top: 20px;
+}
+
+#feed .feed-head img {
     height: 30px;
-    padding: 15px;
+    width: 30px;
 }
 
 #feed .feed-container{
@@ -228,7 +246,7 @@ footer{
 #feed .feed-head a{
     float: right;
     margin-top: 5px;
-    display: contents;
+    display: flex;
 }
 
 #feed .feed-head h2{
@@ -267,6 +285,30 @@ footer{
     border: 1px solid grey;
     padding: 10px;
     margin: 10px;
+}
+
+#profile .redflag-detail .row-one .flag-box:nth-child(1){
+    background: #1db9e8;
+    color: #ffffff;
+}
+
+#profile .redflag-detail .row-one .flag-box:nth-child(2){background: azure;color: black;}
+
+#profile .redflag-detail .row-one .flag-box:nth-child(3){
+    background: #d8bcf3;
+    color: white;
+}
+
+#profile .redflag-detail .row-two .flag-box:nth-child(1){
+    background: cornflowerblue;
+}
+
+#profile .redflag-detail .row-two .flag-box:nth-child(2){
+    background: red;
+}
+
+#profile .redflag-detail .row-two .flag-box:nth-child(3){
+    
 }
 
 #timeline .timeline-records{
@@ -334,3 +376,360 @@ footer{
     float: right;
 }
 
+/*MEDIA QUERIES FOR MOBILE DEVICES*/
+@media screen and (max-width:600px){
+    /*index page*/
+    header #brand,
+    header nav{
+        width: 100%;
+        float: 0;
+        text-align: center;
+    }
+
+    #landing .flex-container-3 .col{
+        width: 100%;
+        float: 0;
+        text-align: center;
+        margin-top: -20px;
+    }
+
+    #landing .flex-container-3 .col img{
+        display: none;
+    }
+
+    #landing form{
+        width: 100%;
+        text-align: center;
+    }
+
+    #landing input{
+        width: 100%;
+    }
+
+    #touring .small-box{
+        width: 100%;
+        float: 0;
+        text-align: center;
+    }
+
+    /*login page*/
+    #login .container .col{
+        float: 0;
+        width: 100%;
+    }
+
+    #login .container .col h4{
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    #login .container .col:nth-child(1){
+        display: none;
+    }
+
+    #login a{
+        margin-left: 15%;
+        width: 70%;
+    }
+
+    /* explore page */
+    #feed .feed-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #feed .large-feed-box{
+        order: 2;
+        float: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    #feed .small-feed-box{
+        order: 1;
+        float: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    #feed .container{
+        width:100%;
+        margin: auto;
+        overflow: hidden
+    }
+
+    /*profile page*/
+    #profile .container{
+        width: 100%;
+        display: flex;
+        overflow: hidden;
+        flex-direction: column;
+    }
+
+    #profile .redflag-detail{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #profile .redflag-detail .row-one{
+        width: 100%;
+    }
+
+    #profile .redflag-detail .row-two{
+        width: 100%;
+    }
+
+    #profile .profile-detail{
+        width: 100%;
+    }
+
+    #timeline .container{
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #profile .redflag-detail .flag-box{
+        width: 24%;
+        height: 100px;
+        font-size: 10px;
+    }
+
+    /*create page*/
+    #create .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #create .create-box{
+        width: 100%;
+    }
+} 
+
+/*MEDIA QUERIES FOR TABLET DEVICES*/
+@media screen and (min-width:601px) and (max-width: 767px){
+    /*index page*/
+    header #brand,
+    header nav{
+        width: 100%;
+        float: 0;
+        text-align: center;
+    }
+
+    /*index page*/
+    #landing .flex-container-3 .col:nth-child(2){
+        width: 40%;
+        float: left;
+        text-align: center;
+        margin-top: -20px;
+        margin-right: 40px;
+    }
+
+    #landing .flex-container-3 .col:last-child{
+        width: 40%;
+        float: right;
+        text-align: center;
+        margin-top: -20px;
+    }
+
+    #landing .flex-container-3 .col:first-child{
+        display: none;
+    }
+
+    #landing form{
+        width: 100%;
+        text-align: right;
+    }
+
+    #touring .small-box{
+        width: 100%;
+        float: 0;
+        text-align: center;
+    }
+
+    /*login page*/
+    #login .container .col{
+        float: 0;
+        width: 100%;
+    }
+
+    #login .container .col h4{
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    #login .container .col:nth-child(1){
+        display: none;
+    }
+
+    #login a{
+        margin-left: 20%;
+        width: 60%;
+    }
+
+    /* explore page */
+    #feed .feed-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #feed .large-feed-box{
+        order: 2;
+        float: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    #feed .small-feed-box{
+        order: 1;
+        float: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    #feed .container{
+        width:100%;
+        margin: auto;
+        overflow: hidden
+    }
+
+    /*profile page*/
+    #profile .container{
+        width: 80%;
+        display: flex;
+        overflow: hidden;
+        flex-direction: column;
+    }
+
+    #profile .redflag-detail{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #profile .redflag-detail .row-one{
+        width: 100%;
+    }
+
+    #profile .redflag-detail .row-two{
+        width: 100%;
+    }
+
+    #profile .profile-detail{
+        width: 100%;
+    }
+
+    #timeline .container{
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #profile .redflag-detail .flag-box{
+        width: 24%;
+        height: 100px;
+        font-size: 10px;
+    }
+
+    /*create page*/
+    #create .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #create .create-box{
+        width: 100%;
+    }
+}
+
+/*MEDIA QUERIES FOR LAPTOP DEVICES*/
+@media screen and (min-width:768px) and (max-width: 1200px){
+    #landing .flex-container-3{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #landing .flex-container-3 .col{
+        margin-top: -20px;
+        text-align: center;
+    }
+
+    #landing .flex-container-3 .col:nth-of-type(1){
+        width: 40%;
+        float: left;
+        order: 2;
+        text-align: center;
+        flex-grow: 1;
+    }
+
+    #landing .flex-container-3 .col:nth-of-type(2){
+        order: 1;
+        width: 100%;
+    }
+
+    #landing .flex-container-3 .col:nth-of-type(3){
+        width: 40%;
+        float: right;
+        text-align: center;
+        order: 3;
+        flex-grow: 1;
+    }
+
+    /*login page*/
+    #login .container{
+        display: flex;
+    }
+
+    #login .container .col{
+        flex-grow: 1;
+        /* width: 100%; */
+    }
+
+    #login .container .col h4{
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    #login a{
+        margin-left: 10%;
+        width: 80%;
+    }
+
+    /*profile page*/
+    #profile .container{
+        width: 80%;
+        display: flex;
+        overflow: hidden;
+        flex-direction: row;
+    }
+
+    #profile .redflag-detail .flag-box{
+        width: 24%;
+        height: 100px;
+        font-size: 8px;
+    }
+}
+
+/*MEDIA QUERIES FOR LARGE DEVICES*/
+@media screen and (min-width:1201px){
+    /*login page*/
+    #login a{
+        margin-left: 15%;
+        width: 70%;
+    }
+
+    /*profile page*/
+    #profile .container{
+        width: 80%;
+        display: flex;
+        overflow: hidden;
+        flex-direction: row;
+    }
+
+    #profile .redflag-detail .flag-box{
+        width: 24%;
+        height: 150px;
+        font-size: 12px;
+    }
+}
