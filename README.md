@@ -40,3 +40,4 @@ HTTP Method|Endpoint|Functionality
 POST|api/v1/red-flags|Create an incident
 GET|api/v1/red-flags/id|Fetch a specific incident
 GET|api/v1/red-flags|Fetch all incidents
+DELETE|api/v1/red-flags/id|Delete a specific red-flag/incident
