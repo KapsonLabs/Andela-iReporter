@@ -32,14 +32,19 @@ class IncidentAPI(MethodView):
                 return jsonify({"status":200, "message": "There are no incidents yet, Please create one to continue"})
             return jsonify({"status":200, "data": redflags})
         else:
-            pass
+            #return specific red-flag if id is specified
+            unique_red_flag = [red_flag for red_flag in incidents if red_flag.__dict__['id'] == int(id)]
+            if not unique_red_flag:
+                return jsonify({"status":404, "error":"The redflag you requested doesnt exist"})
+            return jsonify({"status":200, "data": [unique_red_flag[0].__dict__]})
+
 
     def post(self):
 
         try:
-            if len(request.json) == 7:
+            if len(request.json) == 6:
                 incident = Incident(request.json['createdBy'], request.json['incident_type'], request.json['location'], 
-                status=request.json['status'], Image=request.json['Image'], Videos=request.json['Videos'], 
+                Image=request.json['Image'], Videos=request.json['Videos'], 
                 comment=request.json['comment'])
                 incidents.append(incident)
             else:
@@ -51,5 +56,15 @@ class IncidentAPI(MethodView):
         return jsonify({"status":201, "data": [{"id":incident.id, "message":"Created Red flag Record"}]})
 
     def delete(self,id):
+        try:
+            get_record = [incident for incident in incidents if incident.__dict__['id'] == int(id)]
+            incidents.remove(get_record[0])
+            return jsonify({"status":200, "data": [{"id":get_record[0].id, 
+            "message":"Red-flag record deleted successfully"}]}) 
+        except:
+            return jsonify({"status":404 , "error":"The resource doenot exist"})
+
+    def put(self,id):
         pass
+
 

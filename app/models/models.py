@@ -44,7 +44,7 @@ class Incident:
         self.createdBy = createdBy
         self.incident_type = incident_type
         self.location=location
-        self.status=kwargs['status']
+        self.status='draft'
         self.Image=kwargs['Image']
         self.Videos=kwargs['Videos']
         self.comment=kwargs['comment']
@@ -68,10 +68,9 @@ class Incident:
 
     @incident_type.setter
     def incident_type(self,value):
-        if not isinstance(value, str):
-            if value is not 'red-flag' or 'intervention':
-                raise ValueError("Incident type can only be either 'red-flag' or 'intervention'")
-            self._incident_type=value
+        if not isinstance(value, str) and value not in ['red-flag', 'intervention']:
+            raise ValueError("Incident type can only be either 'red-flag' or 'intervention'")
+        self._incident_type=value
 
     def convert_data(self):
         return {'id': self.id, 'createdOn':self.createdOn, 'createdBy': self.createdBy, 

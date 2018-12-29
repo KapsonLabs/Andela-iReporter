@@ -7,7 +7,7 @@ unique incident route
 
 import unittest
 import json
-from src.app import app
+from app import app
 from random import randint
 
 class TestDeleteUniqueIncident(unittest.TestCase):
