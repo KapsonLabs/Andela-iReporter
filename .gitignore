@@ -1,7 +1,6 @@
 repo_env/
-app/__pycache__/
-app/.pytest_cache
 .vscode/
 UI/
 __pycache__
 .pyc
+.pytest_cache
