@@ -21,7 +21,10 @@ pluggy==0.8.0
 py==1.7.0
 pylint==2.2.2
 pytest==4.0.2
+<<<<<<< HEAD
 pytest-cov==2.6.0
+=======
+>>>>>>> fb7625d564910b1bce1fce9344d94a21e766f375
 PyYAML==3.13
 requests==2.21.0
 six==1.12.0

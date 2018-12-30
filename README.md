@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/KapsonLabs/Andela-iReporter.svg?branch=api)](https://travis-ci.org/KapsonLabs/Andela-iReporter) [![Coverage Status](https://coveralls.io/repos/github/KapsonLabs/Andela-iReporter/badge.svg?branch=master)](https://coveralls.io/github/KapsonLabs/Andela-iReporter?branch=master) [![Maintainability](https://api.codeclimate.com/v1/badges/5ecd878a2235b47e603a/maintainability)](https://codeclimate.com/github/KapsonLabs/Andela-iReporter/maintainability)
+[![Build Status](https://travis-ci.org/KapsonLabs/Andela-iReporter.svg?branch=api)](https://travis-ci.org/KapsonLabs/Andela-iReporter) [![Coverage Status](https://coveralls.io/repos/github/KapsonLabs/Andela-iReporter/badge.svg?branch=api)](https://coveralls.io/github/KapsonLabs/Andela-iReporter?branch=api) [![Maintainability](https://api.codeclimate.com/v1/badges/5ecd878a2235b47e603a/maintainability)](https://codeclimate.com/github/KapsonLabs/Andela-iReporter/maintainability)
 
 # iREPORTER PROJECT #
 
