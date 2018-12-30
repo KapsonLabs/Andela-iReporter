@@ -1,4 +1,5 @@
 repo_env/
 src/__pycache__/
 src/.pytest_cache
-.vscode/*
+.vscode/
+UI/
