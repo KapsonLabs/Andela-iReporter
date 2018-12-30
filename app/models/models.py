@@ -58,8 +58,8 @@ class Incident:
     #validating the type of created by using a setter.
     @createdBy.setter
     def createdBy(self,value):
-        if not isinstance(value, int):
-            raise ValueError("Created by can only be a integer")
+        if not isinstance(value, str):
+            raise ValueError("Created by can only be a string")
         self._createdBy = value
 
     @property
