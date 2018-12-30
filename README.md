@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/KapsonLabs/Andela-iReporter.svg?branch=api)](https://travis-ci.org/KapsonLabs/Andela-iReporter) [![Coverage Status](https://coveralls.io/repos/github/KapsonLabs/Andela-iReporter/badge.svg?branch=api)](https://coveralls.io/github/KapsonLabs/Andela-iReporter?branch=api) [![Maintainability](https://api.codeclimate.com/v1/badges/5ecd878a2235b47e603a/maintainability)](https://codeclimate.com/github/KapsonLabs/Andela-iReporter/maintainability)
+
 # iREPORTER PROJECT #
 
 Corruption is a huge bane to Africa’s development. African countries must develop novel and localised solutions that will curb this menace, hence the birth of iReporter. iReporter enables any/every citizen to bring any form of corruption to the notice of appropriate authorities and the general public. Users can also report on things that needs government intervention.
@@ -30,3 +32,12 @@ B) Admin
 - CSS
 - JS
 - Python
+
+### API Endpoints
+
+HTTP Method|Endpoint|Functionality
+-----------|--------|-------------
+POST|api/v1/red-flags|Create an incident
+GET|api/v1/red-flags/id|Fetch a specific incident
+GET|api/v1/red-flags|Fetch all incidents
+DELETE|api/v1/red-flags/id|Delete a specific red-flag/incident

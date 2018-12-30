@@ -1,0 +1,6 @@
+repo_env/
+.vscode/
+UI/
+__pycache__
+.pyc
+.pytest_cache
