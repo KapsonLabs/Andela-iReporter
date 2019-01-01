@@ -16,6 +16,8 @@ from flask import jsonify, request, Response, json
 from flask.views import MethodView
 
 from app.models.models import User, Incident
+from app.utils.utils import requires_admin_access
+
 
 accounts=[]
 incidents=[]
@@ -25,12 +27,24 @@ class UserAPI(MethodView):
     class for user account
     management
     """
-
+    # decorators = [requires_admin_access]
+    users=[]
     def __init__(self):
-        pass
+        for account in accounts:
+            __class__.users.append(account.convert_to_dict())
 
     def get(self,id):
-        pass
+        if len(accounts) < 1:
+            return jsonify({"status":200, "message": "There are no registered users yet"})
+        elif id is None:
+            #return all redflags
+            return jsonify({"status":200, "data": __class__.users})
+        else:
+            #return specific red-flag if id is specified
+            unique_user = [user for user in __class__.users if user['id'] == int(id)]
+            if not unique_user:
+                return jsonify({"status":404, "error":"The user you requested doesnt exist"})
+            return jsonify({"status":200, "data": [unique_user[0]]})
 
     def post(self):
         try:
@@ -44,13 +58,25 @@ class UserAPI(MethodView):
                 return jsonify({"status":400, "error": "Improper data body, Read documentation to send the appropriate data"})
         except ValueError as e:
             return jsonify({"status":400, "error": "One of the values you posted happens to be of an unsupported type/format.\
-             {0}".format(e)})
+            {0}".format(e)})
         return jsonify({"status":201, "data": [{"id":user_account.id, "message":"Successfully created user"}]})
 
     def delete(self,id):
         pass
 
     def patch(self,id):
+        pass
+
+class AuthenticationAPI(MethodView):
+    """
+    class for user account
+    authentication management
+    """
+
+    def post(self):
+        pass
+
+    def delete(self):
         pass
 
 class IncidentAPI(MethodView):
