@@ -14,11 +14,12 @@ from random import randint
 from datetime import date
 
 class User:
-    user_count=1
     """
     Models for the user of the
     application
     """
+
+    user_count=1
     def __init__(self, firstname, lastname, email, **kwargs):
         self.id=__class__.user_count
         self.firstname=firstname
@@ -81,7 +82,7 @@ class User:
 
     @email.setter
     def email(self,value):
-        if not isinstance(value, str) and not re.match(r"[^@]+@[^@]+\.[^@]+", value):
+        if not re.match(r"[^@]+@[^@]+\.[^@]+", value):
             raise ValueError("Email addresses should follow the pattern something@email.com")
         self._email = value
 
