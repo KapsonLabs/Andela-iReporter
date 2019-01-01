@@ -16,36 +16,24 @@ class TestGetUniqueIncident(unittest.TestCase):
         self.app_tester = app.test_client()
 
     def test_get_unique_incident(self):
-        # incident_data = {"createdBy":"Allan2",
-        #                 "incident_type":"red-flag",
-        #                 "location":"Kampala",
-        #                 "Image":"come.jpg",
-        #                 "Videos":"come.mp4",
-        #                 "comment":"There is bribery here"}
+        incident_data = {
+                        "createdBy":"Allan2",
+                        "incident_type":"red-flag",
+                        "location":[1,2],
+                        "images":["come.jpg"],
+                        "videos":["come.mp4"],
+                        "comment":"There is bribery here"
+                        }
 
-        # self.app_tester.post('/api/v1/red-flags', json=incident_data)
-        # incident_data = {"createdBy":"Allan",
-        #                 "incident_type":"intervention",
-        #                 "location":"Mbarara",
-        #                 "Image":"go.jpg",
-        #                 "Videos":"again.mp4",
-        #                 "comment":"There is bribery here assured"}
-        # self.app_tester.post('/api/v1/red-flags', json=incident_data)
+        self.app_tester.post('/api/v1/red-flags/', json=incident_data)
 
-        # response = self.app_tester.get('/api/v1/red-flags/')
-        # data = json.loads(response.data)
+        get_unique = self.app_tester.get('/api/v1/red-flags/2')
+        data_get_unique = json.loads(get_unique.data)
+        self.assertEqual(data_get_unique["status"], 200)
+        self.assertEqual(data_get_unique['data'][0]['_createdBy'], 'Allan')
 
-        # id = data["data"][0]["id"]
-        # get_unique = self.app_tester.get('/api/v1/red-flags/{0}'.format(id))
-        # data_get_unique = json.loads(get_unique.data)
-        # print(data_get_unique)
-        # #self.assertEqual(data_get_unique['data'][0]['createdBy'], 'Allan2')
-        # self.assertEqual(data_get_unique["status"], 200)
-        pass
-
-    def test_raises_404(self):
-        id = randint(1,100)
-        response_get_unique_404 = self.app_tester.get('/api/v1/red-flags/{0}'.format(id))
+    def test_get_unique_raises_404(self):
+        response_get_unique_404 = self.app_tester.get('/api/v1/red-flags/6')
         data_get_unique_404 = json.loads(response_get_unique_404.data)
         print(data_get_unique_404)
         self.assertEqual(data_get_unique_404.get("status"), 404)
