@@ -17,9 +17,9 @@ class TestPostIncident(unittest.TestCase):
     def test_add_red_flag(self):
         incident_data = {"createdBy":"Allan2",
                         "incident_type":"red-flag",
-                        "location":"Kampala",
-                        "Image":"come.jpg",
-                        "Videos":"come.mp4",
+                        "location":[1.0, 2.0],
+                        "images":["come.jpg"],
+                        "videos":["come.mp4"],
                         "comment":"There is bribery here"}
 
         response = self.app_tester.post('/api/v1/red-flags/', json=incident_data)

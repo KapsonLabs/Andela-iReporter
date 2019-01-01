@@ -17,7 +17,21 @@ from flask.views import MethodView
 
 from app.models.models import Incident
 
+accounts=[]
 incidents=[]
+
+class UserAPI(MethodView):
+    def get(self,id):
+        pass
+
+    def post(self):
+        pass
+
+    def delete(self,id):
+        pass
+
+    def patch(self,id):
+        pass
 
 class IncidentAPI(MethodView):
     
@@ -44,15 +58,15 @@ class IncidentAPI(MethodView):
         try:
             if len(request.json) == 6:
                 incident = Incident(request.json['createdBy'], request.json['incident_type'], request.json['location'], 
-                Image=request.json['Image'], Videos=request.json['Videos'], 
+                images=request.json['images'], videos=request.json['videos'], 
                 comment=request.json['comment'])
                 incidents.append(incident)
             else:
                 return jsonify({"status":400, "error": "Improper data body, Read documentation to send the appropriate data"})
         except ValueError as e:
             print(e)
-            return jsonify({"status":400, "error": "One of the values you posted happens to be of an unsupported\
-            type/format. {0}".format(e)})
+            return jsonify({"status":400, "error": "One of the values you posted happens to be of an unsupportedvtype/format.\
+             {0}".format(e)})
         return jsonify({"status":201, "data": [{"id":incident.id, "message":"Created Red flag Record"}]})
 
     def delete(self,id):
@@ -64,7 +78,7 @@ class IncidentAPI(MethodView):
         except:
             return jsonify({"status":404 , "error":"The resource doenot exist"})
 
-    def put(self,id):
+    def patch(self,id):
         pass
 
 
