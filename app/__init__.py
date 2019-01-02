@@ -6,7 +6,7 @@ from logging.handlers import SMTPHandler
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 
-from app.routes.urls import user_api, incident_api
+from app.routes.urls import api_rules
 
 #production mode error messaging 
 mail_handler = SMTPHandler(
