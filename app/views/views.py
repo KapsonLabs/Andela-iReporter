@@ -16,7 +16,7 @@ from flask import jsonify, request, Response, json
 from flask.views import MethodView
 
 from app.models.models import User, Incident
-from app.utils.utils import requires_admin_access
+# from app.utils.utils import requires_admin_access
 
 
 accounts=[]
