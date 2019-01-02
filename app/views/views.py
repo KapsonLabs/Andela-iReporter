@@ -48,7 +48,8 @@ class UserAPI(MethodView):
 
     def post(self):
         try:
-            if len(request.json) == 8:
+            if len(request.json) == 8 and all(isinstance(i, str) for i in [request.json['firstname'], request.json['lastname'],
+            request.json['othernames'], request.json['username']]):
                 user_account = User(request.json['firstname'], request.json['lastname'], request.json['email'], 
                 password=request.json['password'], othernames=request.json['othernames'], phoneNumber=request.json['phoneNumber'],
                 username=request.json['username'], isAdmin=request.json['isAdmin'])
@@ -106,7 +107,8 @@ class IncidentAPI(MethodView):
 
     def post(self):
         try:
-            if len(request.json) == 6:
+            if len(request.json) == 6 and all(isinstance(i, list) for i in [request.json['location'],
+            request.json['images'], request.json['videos']]):
                 incident = Incident(request.json['createdBy'], request.json['incident_type'], request.json['location'], 
                 images=request.json['images'], videos=request.json['videos'], comment=request.json['comment'])
                 incidents.append(incident)
@@ -114,7 +116,7 @@ class IncidentAPI(MethodView):
                 return jsonify({"status":400, "error": "Improper data body, Read documentation to send the appropriate data"})
         except ValueError as e:
             print(e)
-            return jsonify({"status":400, "error": "One of the values you posted happens to be of an unsupportedvtype/format.\
+            return jsonify({"status":400, "error": "One of the values you posted happens to be of an unsupported or type/format.\
              {0}".format(e)})
         return jsonify({"status":201, "data": [{"id":incident.id, "message":"Created Red flag Record"}]})
 
